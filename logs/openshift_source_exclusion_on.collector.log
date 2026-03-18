@@ -1,0 +1,1087 @@
+2026-03-18T04:43:55.266Z	info	service@v0.121.0/service.go:193	Setting up own telemetry...
+2026-03-18T04:43:55.266Z	info	builders/builders.go:26	Development component. May change in the future.	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces"}
+2026-03-18T04:43:55.268Z	info	service@v0.121.0/service.go:258	Starting otelcol-contrib...	{"Version": "0.121.0", "NumCPU": 16}
+2026-03-18T04:43:55.268Z	info	extensions/extensions.go:40	Starting extensions...
+2026-03-18T04:43:55.268Z	info	otlpreceiver@v0.121.0/otlp.go:116	Starting GRPC server	{"otelcol.component.id": "otlp", "otelcol.component.kind": "Receiver", "endpoint": "0.0.0.0:4317"}
+2026-03-18T04:43:55.269Z	info	otlpreceiver@v0.121.0/otlp.go:173	Starting HTTP server	{"otelcol.component.id": "otlp", "otelcol.component.kind": "Receiver", "endpoint": "0.0.0.0:4318"}
+2026-03-18T04:43:55.269Z	info	service@v0.121.0/service.go:281	Everything is ready. Begin running and processing data.
+2026-03-18T04:44:06.890Z	info	Traces	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 71}
+2026-03-18T04:44:06.891Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.20.0
+Resource attributes:
+     -> container.id: Str(94d05c831430c7ce303ea37781df8694a6fd3efb62a2dcfb133c5e2283407074)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(repro-app-66c8476888-2pvrw)
+     -> os.description: Str(Linux 5.14.0-427.111.1.el9_4.x86_64)
+     -> os.type: Str(linux)
+     -> process.command_args: Slice(["/opt/java/openjdk/bin/java","-javaagent:/app/opentelemetry-javaagent.jar","-Dotel.service.name=repro-app","-Dotel.traces.exporter=otlp","-Dotel.exporter.otlp.endpoint=http://otel-collector:4318","-Dotel.exporter.otlp.protocol=http/protobuf","-Dotel.metrics.exporter=none","-Dotel.logs.exporter=none","-Dotel.traces.sampler=always_on","-Dotel.javaagent.extensions=/app/actuator-drop-extension.jar","-jar","/app/app.jar"])
+     -> process.executable.path: Str(/opt/java/openjdk/bin/java)
+     -> process.pid: Int(2)
+     -> process.runtime.description: Str(Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.10+7-LTS)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-LTS)
+     -> service.name: Str(repro-app)
+     -> telemetry.auto.version: Str(1.28.0)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.28.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.spring-webmvc-6.0 1.28.0-alpha
+Span #0
+    Trace ID       : 7604fb7ffaa0ed79051819e9f820e24c
+    Parent ID      : ef3d145feac3e758
+    ID             : 333d6ac7b63bd508
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.004934921 +0000 UTC
+    End time       : 2026-03-18 04:44:04.137569134 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #1
+    Trace ID       : 2470ddc88d6451e044e60654c87cd552
+    Parent ID      : d826897027ad9d57
+    ID             : 750e08971d6dcbfa
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.154398484 +0000 UTC
+    End time       : 2026-03-18 04:44:04.157950129 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #2
+    Trace ID       : 0bb9fdd5b5ce0380e618314010f73d58
+    Parent ID      : 78a19245304c5d9e
+    ID             : 9906db5840357521
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.173434788 +0000 UTC
+    End time       : 2026-03-18 04:44:04.176630548 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+Span #3
+    Trace ID       : 17ff6027c4fd499b1a859c2b261e2291
+    Parent ID      : 417f96a4edf94e6f
+    ID             : 4161d76f48fb2c13
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.189164136 +0000 UTC
+    End time       : 2026-03-18 04:44:04.191875297 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+Span #4
+    Trace ID       : 2d9e9424e7cf58db687cb02a6ee8d4b7
+    Parent ID      : 5184522c23f3802c
+    ID             : c6d545097acfe5f0
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.202115738 +0000 UTC
+    End time       : 2026-03-18 04:44:04.204770803 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+Span #5
+    Trace ID       : 5e9f84a6186e5e59f74b68cbd772e9a2
+    Parent ID      : 3d5db0e3f33202e6
+    ID             : ec90defbea0e1784
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.214274305 +0000 UTC
+    End time       : 2026-03-18 04:44:04.217379844 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+Span #6
+    Trace ID       : 134a1d4b11fee0755891e28eb26e79a2
+    Parent ID      : 4d528c5a1aae3679
+    ID             : c134527288536c26
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.227839245 +0000 UTC
+    End time       : 2026-03-18 04:44:04.230788532 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+Span #7
+    Trace ID       : dbae7e59fef42c6ed14da5df553269a4
+    Parent ID      : 618c61c4560f8ed0
+    ID             : 08ac490081f0b11e
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.240659772 +0000 UTC
+    End time       : 2026-03-18 04:44:04.243095446 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+Span #8
+    Trace ID       : 73feb8901cc2de0bb316266ba8d320e6
+    Parent ID      : 1fe919c7ac8950f2
+    ID             : 2a57b5c30cd220c4
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.251418503 +0000 UTC
+    End time       : 2026-03-18 04:44:04.253144469 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+Span #9
+    Trace ID       : b26869ceccaa765b23f3efcc6af6962b
+    Parent ID      : 854937d6a20797aa
+    ID             : c14ffd90bdf39d67
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.264560373 +0000 UTC
+    End time       : 2026-03-18 04:44:04.267509068 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(63)
+     -> thread.name: Str(http-nio-8080-exec-10)
+Span #10
+    Trace ID       : 6abc34793e2ee8633cf14deb61c2e28d
+    Parent ID      : 69ed9b86be0fc245
+    ID             : 96755b40bae56126
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.277769126 +0000 UTC
+    End time       : 2026-03-18 04:44:04.280964033 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #11
+    Trace ID       : f87dcd7b7b3e1380c6b513c771e12cb4
+    Parent ID      : 4c194178956b4bf6
+    ID             : 7168b52356e3dba8
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.291329549 +0000 UTC
+    End time       : 2026-03-18 04:44:04.295222303 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #12
+    Trace ID       : 0572e7cbdfe423b775095773a9a53aad
+    Parent ID      : 9262465fa4322297
+    ID             : 602815dbb9745d5e
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.311718359 +0000 UTC
+    End time       : 2026-03-18 04:44:04.314629394 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+Span #13
+    Trace ID       : ab17c3574c1e6e327db4010a0693398c
+    Parent ID      : 01d692288c5b8f7b
+    ID             : e07572fe5f3d43d2
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.324912285 +0000 UTC
+    End time       : 2026-03-18 04:44:04.327717963 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+Span #14
+    Trace ID       : 1dc3cb50a72b407b98efa597d3359339
+    Parent ID      : 402c4ca4a4e23483
+    ID             : af8da970ac476afb
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.338326144 +0000 UTC
+    End time       : 2026-03-18 04:44:04.342148286 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+Span #15
+    Trace ID       : 8f97efa4aa73443154bfeb11ab140f99
+    Parent ID      : f4f946d8c562bef7
+    ID             : 8d85a5db2cbb8bd8
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.354051603 +0000 UTC
+    End time       : 2026-03-18 04:44:04.358925958 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+Span #16
+    Trace ID       : f451020ef34b8f471fe568a04aaf9e4f
+    Parent ID      : c00e15aeef6f9f12
+    ID             : a50921bf77f7822c
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.369721159 +0000 UTC
+    End time       : 2026-03-18 04:44:04.373820691 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+Span #17
+    Trace ID       : 56f5458fcf6da994a26b9dc6a511daba
+    Parent ID      : 697ec6870a3da28a
+    ID             : 98b30fb1d797be26
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.383346283 +0000 UTC
+    End time       : 2026-03-18 04:44:04.387080822 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+Span #18
+    Trace ID       : fe2ad47dd750894f0524d60b4c3c7a10
+    Parent ID      : e06f7167f5b49876
+    ID             : e9515afa0bf9f559
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.398315035 +0000 UTC
+    End time       : 2026-03-18 04:44:04.400984508 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+Span #19
+    Trace ID       : 61bfba7e7304a1b7a8fe8032d058b56b
+    Parent ID      : 17bfc94676b9552e
+    ID             : 615f3b0683f0ddfd
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.4120366 +0000 UTC
+    End time       : 2026-03-18 04:44:04.415486025 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(63)
+     -> thread.name: Str(http-nio-8080-exec-10)
+Span #20
+    Trace ID       : 3595f60f14778fc2873789cc91941332
+    Parent ID      : 744169ec95c7ab66
+    ID             : aa08456dc1ee5dfc
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.425109248 +0000 UTC
+    End time       : 2026-03-18 04:44:04.428522646 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #21
+    Trace ID       : 9dbc3989039f5eaa42b420a357cfeead
+    Parent ID      : 1cf1ecd4943356bc
+    ID             : 6c629ca6d8cc2d72
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.439096221 +0000 UTC
+    End time       : 2026-03-18 04:44:04.442451659 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #22
+    Trace ID       : f9dc839214e27ebed323bc82f3f20d0f
+    Parent ID      : 84327d1a9a217cb4
+    ID             : 5ff0353e1e3a33bd
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.453208378 +0000 UTC
+    End time       : 2026-03-18 04:44:04.456945862 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+Span #23
+    Trace ID       : dea74602802ff8433cf9d42e5c326c2b
+    Parent ID      : 5fea13b30713c10d
+    ID             : 3d27b4cd3e028c1c
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.466710683 +0000 UTC
+    End time       : 2026-03-18 04:44:04.470430093 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+Span #24
+    Trace ID       : 2faf75e887edb7f3ebb04a62fec8da8c
+    Parent ID      : 755b31debd619f82
+    ID             : f14a8c27196829e2
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.47944662 +0000 UTC
+    End time       : 2026-03-18 04:44:04.482033528 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+Span #25
+    Trace ID       : bca911e1924816c2ecb4374425830a26
+    Parent ID      : 36a83cb77c27b2fb
+    ID             : 95851ac0fe9638cb
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.490774519 +0000 UTC
+    End time       : 2026-03-18 04:44:04.49322425 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+Span #26
+    Trace ID       : 5910c345fb47c55a988121407992a681
+    Parent ID      : 24683a5a590255a6
+    ID             : 31b913ee3d9761de
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.504646757 +0000 UTC
+    End time       : 2026-03-18 04:44:04.508158898 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+Span #27
+    Trace ID       : 95f19b9533b7f390d3da0d472b30bbb8
+    Parent ID      : e7ca078219bce8d6
+    ID             : c16636ac60a5c779
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.522950398 +0000 UTC
+    End time       : 2026-03-18 04:44:04.526362342 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+Span #28
+    Trace ID       : a8afbcc5378b241033f997dd86868623
+    Parent ID      : 6e781c17af30e1db
+    ID             : 0d23a99da366670d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.537238475 +0000 UTC
+    End time       : 2026-03-18 04:44:04.541773283 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+Span #29
+    Trace ID       : 86d495e80850ff923bc3b1036dd4898f
+    Parent ID      : 1a9c5b84122682c9
+    ID             : e270c333b6537a5f
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.552686796 +0000 UTC
+    End time       : 2026-03-18 04:44:04.556991703 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(63)
+     -> thread.name: Str(http-nio-8080-exec-10)
+Span #30
+    Trace ID       : c26ff2aad0b3b581648292de3073d7a3
+    Parent ID      : 7c1004899bbac46d
+    ID             : 762d679039dfdc2e
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.56652003 +0000 UTC
+    End time       : 2026-03-18 04:44:04.569318014 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #31
+    Trace ID       : 06e03373d5a48650256b6c8d951b7ce8
+    Parent ID      : a9197d7e7106e04f
+    ID             : 021943174b36007e
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.578592585 +0000 UTC
+    End time       : 2026-03-18 04:44:04.582253005 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #32
+    Trace ID       : 56192674e4b232a51f5148bc36eee050
+    Parent ID      : 9c5d65627e88d7aa
+    ID             : 0a318a9539419dc6
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.591902829 +0000 UTC
+    End time       : 2026-03-18 04:44:04.595412366 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+Span #33
+    Trace ID       : 28c2842d17b40172a3c2de78c290f728
+    Parent ID      : dfa30f08e57b7397
+    ID             : 213f1a5a3dff71e3
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.60421339 +0000 UTC
+    End time       : 2026-03-18 04:44:04.606974004 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+Span #34
+    Trace ID       : df5f050aa39706f032f58e5691c2d1d4
+    Parent ID      : 967c336b8211e2e2
+    ID             : ce4a77565c6c958b
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.6153395 +0000 UTC
+    End time       : 2026-03-18 04:44:04.617454514 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+Span #35
+    Trace ID       : d379d1cddd74be2821e3f65c68cc289b
+    Parent ID      : 1839402245fa5fb9
+    ID             : 21c37a26a1af42c7
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.626831437 +0000 UTC
+    End time       : 2026-03-18 04:44:04.629466584 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+Span #36
+    Trace ID       : a01a71fdc11934ed06d4acb1aad04ebd
+    Parent ID      : 095575481b68524f
+    ID             : 5571719002b85719
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.640073132 +0000 UTC
+    End time       : 2026-03-18 04:44:04.642888488 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+Span #37
+    Trace ID       : 592cff7382beda5fe3849176913e8663
+    Parent ID      : 339688f93dd37aa2
+    ID             : a5be5544b080d759
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.651733033 +0000 UTC
+    End time       : 2026-03-18 04:44:04.654203071 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+Span #38
+    Trace ID       : 1b265c0bfd92f8d12ca74c77fa5bac3a
+    Parent ID      : 9bc73ce1d601b766
+    ID             : fb5a4b38f48dbad7
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.661749164 +0000 UTC
+    End time       : 2026-03-18 04:44:04.663670785 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+Span #39
+    Trace ID       : e58140020abbec7aa85a81bc9c1fecde
+    Parent ID      : 8f3e5d8586bc83e1
+    ID             : fa1a2c7f1ef3dd4d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.672234484 +0000 UTC
+    End time       : 2026-03-18 04:44:04.6745053 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #40
+    Trace ID       : 61f83ad880e68e096c014a4903ac581d
+    Parent ID      : 009760014953fbda
+    ID             : 2b037f68892d0029
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.683998501 +0000 UTC
+    End time       : 2026-03-18 04:44:04.687412749 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #41
+    Trace ID       : 130f0e455fa271efd851c278bf9962fc
+    Parent ID      : 1ccf3e4973b56aba
+    ID             : 5367b74ebf6dd91a
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.697017369 +0000 UTC
+    End time       : 2026-03-18 04:44:04.700208059 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+Span #42
+    Trace ID       : b08751bf3909315f7bf092018377f2f7
+    Parent ID      : 38515aa375a69534
+    ID             : 10dcafd2ab629c41
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.70954695 +0000 UTC
+    End time       : 2026-03-18 04:44:04.713546836 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+Span #43
+    Trace ID       : 6cda7443c7f2cf1514e84ff5ef3931fb
+    Parent ID      : 439136530431f70c
+    ID             : 3b76d587315463e7
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.72291348 +0000 UTC
+    End time       : 2026-03-18 04:44:04.725588723 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+Span #44
+    Trace ID       : f4c344110e21afa1584f87a458cb9a18
+    Parent ID      : 8d329b264fa15535
+    ID             : fb2fd9784952bf95
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.733119435 +0000 UTC
+    End time       : 2026-03-18 04:44:04.735101018 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+Span #45
+    Trace ID       : e366c6b8b87d596287f037e63b93f071
+    Parent ID      : 182d021e0cde2563
+    ID             : a2576b300f9b7b37
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.745510016 +0000 UTC
+    End time       : 2026-03-18 04:44:04.747728103 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+Span #46
+    Trace ID       : 77ecc7cfbf6a0cc78c988ea124b72311
+    Parent ID      : b1cbfca40515fb1e
+    ID             : 3a806e243174eb33
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.755258606 +0000 UTC
+    End time       : 2026-03-18 04:44:04.757219601 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+Span #47
+    Trace ID       : 8848eb0ac41be20fa3dca1602a2a715a
+    Parent ID      : a048e43bb70fd122
+    ID             : 42af26690d50362d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.765206558 +0000 UTC
+    End time       : 2026-03-18 04:44:04.767158967 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+Span #48
+    Trace ID       : 93ba31f0a70c6616b7b7aaab35e9b4f1
+    Parent ID      : 11337c54db7c061c
+    ID             : 8e5a39607203dc7d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.775321375 +0000 UTC
+    End time       : 2026-03-18 04:44:04.776910573 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(63)
+     -> thread.name: Str(http-nio-8080-exec-10)
+Span #49
+    Trace ID       : f5ccf7e36a2a6467eda48b57acbd34fa
+    Parent ID      : 84bd0f8ca6e2aa0e
+    ID             : f21a5ce3ff1d09a9
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.784730658 +0000 UTC
+    End time       : 2026-03-18 04:44:04.786736988 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #50
+    Trace ID       : 9cbe27ae95f2ed9aedd3a871ab2eb0b5
+    Parent ID      : b0bc1adb6fc94918
+    ID             : 2f1ce752cca1d91c
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.795390605 +0000 UTC
+    End time       : 2026-03-18 04:44:04.797176442 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #51
+    Trace ID       : f58542df5a9b042ba8daa1b8a3cbd0a4
+    Parent ID      : 1e0a184b2866e9d8
+    ID             : 731d573e4548220d
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.806905033 +0000 UTC
+    End time       : 2026-03-18 04:44:04.81636398 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+Span #52
+    Trace ID       : 7959869365e8f47e5f9c2624b7527101
+    Parent ID      : 309ad74a3fd146e3
+    ID             : 97f1c8ef2b2bba9d
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.827135347 +0000 UTC
+    End time       : 2026-03-18 04:44:04.828166369 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+Span #53
+    Trace ID       : d22451c99daa2a5cc4d35a7d420eaa71
+    Parent ID      : 783fc6acfef47cb3
+    ID             : eb509fe50863f17b
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.836741009 +0000 UTC
+    End time       : 2026-03-18 04:44:04.837505191 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+Span #54
+    Trace ID       : 216d674511aee15077215c95c535973a
+    Parent ID      : 2d2d06e4dcf969ea
+    ID             : a1543ea33c266e13
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.845409733 +0000 UTC
+    End time       : 2026-03-18 04:44:04.846174166 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+Span #55
+    Trace ID       : 02bad8d2dfa0eceaadd0efa02402cc0a
+    Parent ID      : c29a928dc617e711
+    ID             : 9967f35f32464bfd
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.853613167 +0000 UTC
+    End time       : 2026-03-18 04:44:04.854333076 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+Span #56
+    Trace ID       : 59b5dc92d49549ab0f39560f8bafa421
+    Parent ID      : 611b3be9f0e02e5e
+    ID             : 826873cf26e071fa
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.861880089 +0000 UTC
+    End time       : 2026-03-18 04:44:04.862592956 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+Span #57
+    Trace ID       : e28ce37001ebafd7b8d546d4a7e9c19f
+    Parent ID      : 88347af6494f0966
+    ID             : 12fb635f83df474b
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.870115383 +0000 UTC
+    End time       : 2026-03-18 04:44:04.870771212 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+Span #58
+    Trace ID       : 87a7b0561d24465a452112fbbb6c85b4
+    Parent ID      : 6c815a1ffe840d61
+    ID             : 0b467c0f581f06d9
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.878590356 +0000 UTC
+    End time       : 2026-03-18 04:44:04.87922203 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(63)
+     -> thread.name: Str(http-nio-8080-exec-10)
+Span #59
+    Trace ID       : 56ce05ef32feb757c098874ffc03b19f
+    Parent ID      : df52f744689e46f1
+    ID             : a80e3c2759854e4f
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.886555953 +0000 UTC
+    End time       : 2026-03-18 04:44:04.8871037 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #60
+    Trace ID       : b8aa6e5cefc4f3aa5c82faeb2f20ee41
+    Parent ID      : 8027f7a35046f98e
+    ID             : 50c54f5c4c6ab375
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:44:04.89424359 +0000 UTC
+    End time       : 2026-03-18 04:44:04.894922874 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+ScopeSpans #1
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.tomcat-10.0 1.28.0-alpha
+Span #0
+    Trace ID       : f58542df5a9b042ba8daa1b8a3cbd0a4
+    Parent ID      : 
+    ID             : 1e0a184b2866e9d8
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.804116888 +0000 UTC
+    End time       : 2026-03-18 04:44:04.817956274 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(56)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.sock.peer.port: Int(52672)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #1
+    Trace ID       : 7959869365e8f47e5f9c2624b7527101
+    Parent ID      : 
+    ID             : 309ad74a3fd146e3
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.826080059 +0000 UTC
+    End time       : 2026-03-18 04:44:04.828805046 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(57)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.sock.peer.port: Int(52674)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #2
+    Trace ID       : d22451c99daa2a5cc4d35a7d420eaa71
+    Parent ID      : 
+    ID             : 783fc6acfef47cb3
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.835403732 +0000 UTC
+    End time       : 2026-03-18 04:44:04.83805987 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(58)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.sock.peer.port: Int(52690)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #3
+    Trace ID       : 216d674511aee15077215c95c535973a
+    Parent ID      : 
+    ID             : 2d2d06e4dcf969ea
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.844625504 +0000 UTC
+    End time       : 2026-03-18 04:44:04.846642672 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(59)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.sock.peer.port: Int(52704)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #4
+    Trace ID       : 02bad8d2dfa0eceaadd0efa02402cc0a
+    Parent ID      : 
+    ID             : c29a928dc617e711
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.852811355 +0000 UTC
+    End time       : 2026-03-18 04:44:04.854714832 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(60)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.sock.peer.port: Int(52706)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #5
+    Trace ID       : 59b5dc92d49549ab0f39560f8bafa421
+    Parent ID      : 
+    ID             : 611b3be9f0e02e5e
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.861150112 +0000 UTC
+    End time       : 2026-03-18 04:44:04.862957829 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(61)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.sock.peer.port: Int(52710)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #6
+    Trace ID       : e28ce37001ebafd7b8d546d4a7e9c19f
+    Parent ID      : 
+    ID             : 88347af6494f0966
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.869515488 +0000 UTC
+    End time       : 2026-03-18 04:44:04.87112249 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(62)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.sock.peer.port: Int(52716)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #7
+    Trace ID       : 87a7b0561d24465a452112fbbb6c85b4
+    Parent ID      : 
+    ID             : 6c815a1ffe840d61
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.877921933 +0000 UTC
+    End time       : 2026-03-18 04:44:04.87965954 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(63)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.sock.peer.port: Int(52728)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #8
+    Trace ID       : 56ce05ef32feb757c098874ffc03b19f
+    Parent ID      : 
+    ID             : df52f744689e46f1
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.885890656 +0000 UTC
+    End time       : 2026-03-18 04:44:04.887511113 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(54)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.sock.peer.port: Int(52742)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+Span #9
+    Trace ID       : b8aa6e5cefc4f3aa5c82faeb2f20ee41
+    Parent ID      : 
+    ID             : 8027f7a35046f98e
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:44:04.893447849 +0000 UTC
+    End time       : 2026-03-18 04:44:04.895409546 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> net.protocol.name: Str(http)
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.132)
+     -> thread.id: Int(55)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.sock.peer.port: Int(52754)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> http.status_code: Int(200)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.133)
+	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces"}

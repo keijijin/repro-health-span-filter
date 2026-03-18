@@ -1,0 +1,2413 @@
+2026-03-18T04:43:32.015Z	info	service@v0.121.0/service.go:193	Setting up own telemetry...
+2026-03-18T04:43:32.015Z	info	builders/builders.go:26	Development component. May change in the future.	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces"}
+2026-03-18T04:43:32.025Z	info	service@v0.121.0/service.go:258	Starting otelcol-contrib...	{"Version": "0.121.0", "NumCPU": 16}
+2026-03-18T04:43:32.025Z	info	extensions/extensions.go:40	Starting extensions...
+2026-03-18T04:43:32.026Z	info	otlpreceiver@v0.121.0/otlp.go:116	Starting GRPC server	{"otelcol.component.id": "otlp", "otelcol.component.kind": "Receiver", "endpoint": "0.0.0.0:4317"}
+2026-03-18T04:43:32.026Z	info	otlpreceiver@v0.121.0/otlp.go:173	Starting HTTP server	{"otelcol.component.id": "otlp", "otelcol.component.kind": "Receiver", "endpoint": "0.0.0.0:4318"}
+2026-03-18T04:43:32.026Z	info	service@v0.121.0/service.go:281	Everything is ready. Begin running and processing data.
+2026-03-18T04:43:43.851Z	info	Traces	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 122}
+2026-03-18T04:43:43.853Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.20.0
+Resource attributes:
+     -> container.id: Str(3c357112133174f35897a11d69b88c7641d83285f9fa6c952e94298522917759)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(repro-app-fdfb65c49-9rr24)
+     -> os.description: Str(Linux 5.14.0-427.111.1.el9_4.x86_64)
+     -> os.type: Str(linux)
+     -> process.command_args: Slice(["/opt/java/openjdk/bin/java","-javaagent:/app/opentelemetry-javaagent.jar","-Dotel.service.name=repro-app","-Dotel.traces.exporter=otlp","-Dotel.exporter.otlp.endpoint=http://otel-collector:4318","-Dotel.exporter.otlp.protocol=http/protobuf","-Dotel.metrics.exporter=none","-Dotel.logs.exporter=none","-Dotel.traces.sampler=always_on","-jar","/app/app.jar"])
+     -> process.executable.path: Str(/opt/java/openjdk/bin/java)
+     -> process.pid: Int(2)
+     -> process.runtime.description: Str(Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.10+7-LTS)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-LTS)
+     -> service.name: Str(repro-app)
+     -> telemetry.auto.version: Str(1.28.0)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.28.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.spring-webmvc-6.0 1.28.0-alpha
+Span #0
+    Trace ID       : bb9726a4f26cc6a8398a8ade3646a9c7
+    Parent ID      : c94f385d98f74aff
+    ID             : 7141bbc80653a6dd
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.544606372 +0000 UTC
+    End time       : 2026-03-18 04:43:40.675094094 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+Span #1
+    Trace ID       : cd727e85224aa1b5d468cf8cbce2c7c3
+    Parent ID      : 18f2791b2b9e288a
+    ID             : 97cb320b93d042f9
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.689011194 +0000 UTC
+    End time       : 2026-03-18 04:43:40.692821395 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(55)
+Span #2
+    Trace ID       : 4bca556116721aee7661a5add58eb5aa
+    Parent ID      : 77d087e5877a81a2
+    ID             : ca8f862a99fe5247
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.703126988 +0000 UTC
+    End time       : 2026-03-18 04:43:40.70586007 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> thread.id: Int(56)
+Span #3
+    Trace ID       : bd2a5e98725253f6a5cdb34bbd3d664d
+    Parent ID      : 08c34ca823ba0e76
+    ID             : 62ad51e367a2f146
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.714065137 +0000 UTC
+    End time       : 2026-03-18 04:43:40.71659657 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> thread.id: Int(57)
+Span #4
+    Trace ID       : 98f2c8f68a3c34e66935fcc784a7ae6a
+    Parent ID      : 4804b47b3ae230b4
+    ID             : c8ea2f02a8dd53f3
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.726484121 +0000 UTC
+    End time       : 2026-03-18 04:43:40.729622232 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> thread.id: Int(58)
+Span #5
+    Trace ID       : 07ab326f83698e0b489208164c167dab
+    Parent ID      : b1fc62693dddc2a2
+    ID             : 400f37274af339e2
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.739287964 +0000 UTC
+    End time       : 2026-03-18 04:43:40.742540009 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> thread.id: Int(59)
+Span #6
+    Trace ID       : df2548be3aba742f46bc92cfdac7301d
+    Parent ID      : d21fbd2e372125a3
+    ID             : f16cecf76bb0894b
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.752366175 +0000 UTC
+    End time       : 2026-03-18 04:43:40.755341412 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> thread.id: Int(60)
+Span #7
+    Trace ID       : 036a5bdbfcf4b9932bfecd031eafbae5
+    Parent ID      : 967bf5edbfdf6f0d
+    ID             : 299af8345748a956
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.764278569 +0000 UTC
+    End time       : 2026-03-18 04:43:40.766752915 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> thread.id: Int(61)
+Span #8
+    Trace ID       : b61e0e7726f2d46d93ef49ae0e76a628
+    Parent ID      : 3203e46c4a3359d8
+    ID             : 421062fe632aeb08
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.775401483 +0000 UTC
+    End time       : 2026-03-18 04:43:40.778466447 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> thread.id: Int(62)
+Span #9
+    Trace ID       : ca3fcfcf9e6e86166c94e3c9e6f33d4a
+    Parent ID      : 3131524acbde1eac
+    ID             : f61ac950c36d8f71
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.786809593 +0000 UTC
+    End time       : 2026-03-18 04:43:40.789039252 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> thread.id: Int(63)
+Span #10
+    Trace ID       : 5d51de947f943d76d1c7e7d8a90cfa41
+    Parent ID      : 994ed848be977891
+    ID             : 36899b7f3b12284d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.79903758 +0000 UTC
+    End time       : 2026-03-18 04:43:40.801916224 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+Span #11
+    Trace ID       : dc6d28f08f41be005d6ca773c0e1299d
+    Parent ID      : 7c62813408ae4c42
+    ID             : eb2cfb4834930713
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.810980131 +0000 UTC
+    End time       : 2026-03-18 04:43:40.812944933 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(55)
+Span #12
+    Trace ID       : 5ebeaa4441a0647ec87ad692ab19cd4e
+    Parent ID      : b020f3fe1ac46de1
+    ID             : 7f5907056c71050b
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.822024718 +0000 UTC
+    End time       : 2026-03-18 04:43:40.824745818 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> thread.id: Int(56)
+Span #13
+    Trace ID       : 3e498af3f4b1f054e3aae4053f2f8f9f
+    Parent ID      : 1e657feace187efe
+    ID             : f75ad46e9e09c197
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.834008456 +0000 UTC
+    End time       : 2026-03-18 04:43:40.836616133 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> thread.id: Int(57)
+Span #14
+    Trace ID       : f1b03f268f642f598cf7a59df9961974
+    Parent ID      : c6a320ab9f5872f6
+    ID             : b7552534bbf55ed2
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.845678426 +0000 UTC
+    End time       : 2026-03-18 04:43:40.848554015 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> thread.id: Int(58)
+Span #15
+    Trace ID       : 9b603048ccb421ccefec928884054bf6
+    Parent ID      : 7f7cac04c3fd5f12
+    ID             : 0638095fa27a6481
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.857345352 +0000 UTC
+    End time       : 2026-03-18 04:43:40.861345218 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> thread.id: Int(59)
+Span #16
+    Trace ID       : 2712d8a6142793eab4b6bb8de8c9aa37
+    Parent ID      : 4a63c45bf109bfeb
+    ID             : 9833aad188735778
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.876373301 +0000 UTC
+    End time       : 2026-03-18 04:43:40.87954776 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> thread.id: Int(60)
+Span #17
+    Trace ID       : 821414a79449c2b3fac5372e4757cf39
+    Parent ID      : 326a51fd5274feaf
+    ID             : b86d82d925ee82d8
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.8885348 +0000 UTC
+    End time       : 2026-03-18 04:43:40.89124022 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> thread.id: Int(61)
+Span #18
+    Trace ID       : 5364ff7c24de3f96ba0889bfb82f0520
+    Parent ID      : b377ee3d90201efe
+    ID             : 849dda3698fae05c
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.903551072 +0000 UTC
+    End time       : 2026-03-18 04:43:40.906227559 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> thread.id: Int(62)
+Span #19
+    Trace ID       : e499fc00ffef9debd85eff57bb9a4def
+    Parent ID      : 5c6b10599834c7be
+    ID             : c091af970347456f
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.914466619 +0000 UTC
+    End time       : 2026-03-18 04:43:40.916521751 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> thread.id: Int(63)
+Span #20
+    Trace ID       : c3a1f6bc5f80cdd2c76691fff518736b
+    Parent ID      : d4c741dd3270687c
+    ID             : f0e5b628cd21f11f
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.925757068 +0000 UTC
+    End time       : 2026-03-18 04:43:40.927929109 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+Span #21
+    Trace ID       : be012ce4cab9dccae3fee7fc9216ebc0
+    Parent ID      : 982ef22b587de8e6
+    ID             : 150a1fa6d3fffa12
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.936932662 +0000 UTC
+    End time       : 2026-03-18 04:43:40.939890846 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(55)
+Span #22
+    Trace ID       : 0b78c77a3a62cf55edac9bfac4aee1d2
+    Parent ID      : 991f96b6562b51b5
+    ID             : d945cc252cfb017b
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.94907698 +0000 UTC
+    End time       : 2026-03-18 04:43:40.951564462 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> thread.id: Int(56)
+Span #23
+    Trace ID       : 44559dd0d2ee96c558641ea2224663bc
+    Parent ID      : c79aec2dec438fea
+    ID             : 902eab836c1b232b
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.960563287 +0000 UTC
+    End time       : 2026-03-18 04:43:40.963517133 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> thread.id: Int(57)
+Span #24
+    Trace ID       : 5ab0e66ee5c212eff137eb0f250ade06
+    Parent ID      : 2325f7aa3b13d3b8
+    ID             : 5cc3997ddac5470d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.972215753 +0000 UTC
+    End time       : 2026-03-18 04:43:40.974906997 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> thread.id: Int(58)
+Span #25
+    Trace ID       : 3c74cd76927acfe6d35e5ae3dffb790b
+    Parent ID      : fc09ccfa11a41f19
+    ID             : 453eef97fb4d6127
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.983336684 +0000 UTC
+    End time       : 2026-03-18 04:43:40.985768552 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> thread.id: Int(59)
+Span #26
+    Trace ID       : 241a1ff7a634c4fe39214350631189b0
+    Parent ID      : 011756fd2a10f454
+    ID             : cc172d9a68be8049
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:40.994223308 +0000 UTC
+    End time       : 2026-03-18 04:43:40.996165187 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> thread.id: Int(60)
+Span #27
+    Trace ID       : 29b8fc0fac56591a44c75bce82315433
+    Parent ID      : f66f9613a76d7f33
+    ID             : 17f80125d30dcae4
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.006147323 +0000 UTC
+    End time       : 2026-03-18 04:43:41.009364753 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> thread.id: Int(61)
+Span #28
+    Trace ID       : 174309ab73a660dc18c3c3a946d59c87
+    Parent ID      : c9707c3f13b89d2f
+    ID             : 4b4ed5385e51cdc7
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.018708323 +0000 UTC
+    End time       : 2026-03-18 04:43:41.022537389 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> thread.id: Int(62)
+Span #29
+    Trace ID       : cce57d4fd6bd74ffd300639c4163b404
+    Parent ID      : 5738e100d85181b3
+    ID             : d8fb64ac679eb85d
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.034056055 +0000 UTC
+    End time       : 2026-03-18 04:43:41.036736077 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> thread.id: Int(63)
+Span #30
+    Trace ID       : 62b8058c171ee2fb15cbb8ea0a8dd628
+    Parent ID      : 07fde81b24f7cc2d
+    ID             : e10a187e46e8ba3b
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.045552091 +0000 UTC
+    End time       : 2026-03-18 04:43:41.047313211 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+Span #31
+    Trace ID       : e67e58d771bbd83f40b93c51c4911470
+    Parent ID      : 3b62cf354aa6bb95
+    ID             : fd6ed56083510b47
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.055538505 +0000 UTC
+    End time       : 2026-03-18 04:43:41.057737836 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(55)
+Span #32
+    Trace ID       : 05c5a5ffecde93184cb3a6ff7306c6f4
+    Parent ID      : 6aa0e13c1827aee6
+    ID             : b17a2c4f247f8f02
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.065681705 +0000 UTC
+    End time       : 2026-03-18 04:43:41.067807949 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> thread.id: Int(56)
+Span #33
+    Trace ID       : a86278fe21a6ffbc394f3285475d39d2
+    Parent ID      : 9ce7ff9006d0808f
+    ID             : f0946e9826bac549
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.074854323 +0000 UTC
+    End time       : 2026-03-18 04:43:41.076448009 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> thread.id: Int(57)
+Span #34
+    Trace ID       : 6518dbaff9e7220e5b5d828a94d3e923
+    Parent ID      : 862acbb77d667fa9
+    ID             : f0da94bab34f50e3
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.084172055 +0000 UTC
+    End time       : 2026-03-18 04:43:41.086194105 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> thread.id: Int(58)
+Span #35
+    Trace ID       : c91f34264bbd879b3b4cebc974b57147
+    Parent ID      : 1078f639a53fe395
+    ID             : aa81cd55600040ff
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.094157268 +0000 UTC
+    End time       : 2026-03-18 04:43:41.095985715 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> thread.id: Int(59)
+Span #36
+    Trace ID       : 4ed937bff7ed34fef892e34da7082e31
+    Parent ID      : 2a1e0af0b6b82f4c
+    ID             : 8581ba8a8ffb1cc8
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.103700883 +0000 UTC
+    End time       : 2026-03-18 04:43:41.106093076 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> thread.id: Int(60)
+Span #37
+    Trace ID       : 33fae2a87e1fbae2b7d1941d995a72be
+    Parent ID      : e4976baf5fc7455d
+    ID             : 5fccd71a51e0ee2c
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.113879168 +0000 UTC
+    End time       : 2026-03-18 04:43:41.115846535 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> thread.id: Int(61)
+Span #38
+    Trace ID       : 9642b5e79c398979f4f26b570c1bfe6a
+    Parent ID      : cf41bf733943b20a
+    ID             : 83cd95422eeeab3c
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.123320281 +0000 UTC
+    End time       : 2026-03-18 04:43:41.125225241 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> thread.id: Int(62)
+Span #39
+    Trace ID       : 295450dee385eab2fdd47646cfc5acb7
+    Parent ID      : 124c46ba075e2abf
+    ID             : 120ae8aa28882a50
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.136154853 +0000 UTC
+    End time       : 2026-03-18 04:43:41.13874036 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> thread.id: Int(63)
+Span #40
+    Trace ID       : 80970c938b397146c8241aaf1bca75a1
+    Parent ID      : 31a7c3267c8a9a48
+    ID             : c884df0b7b558c53
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.148380586 +0000 UTC
+    End time       : 2026-03-18 04:43:41.152992579 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+Span #41
+    Trace ID       : 034ceb5accd216e6d973c6fef620f2ec
+    Parent ID      : 23354e4062e43f34
+    ID             : 45313d7bf8fbab25
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.167376564 +0000 UTC
+    End time       : 2026-03-18 04:43:41.172635821 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(55)
+Span #42
+    Trace ID       : a10d2a9a44b62a10ccf69da7d7314c40
+    Parent ID      : 61b4dd86e11cb801
+    ID             : d0ce3a37143beabe
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.186130982 +0000 UTC
+    End time       : 2026-03-18 04:43:41.191877231 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> thread.id: Int(56)
+Span #43
+    Trace ID       : 9309116bb048ddad025f380e20534195
+    Parent ID      : 96198e56831db8d2
+    ID             : a2fa28e034bed859
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.206207487 +0000 UTC
+    End time       : 2026-03-18 04:43:41.20928313 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> thread.id: Int(57)
+Span #44
+    Trace ID       : 98944f42e2ef5616345fe5c55045f352
+    Parent ID      : 36f17da4ae6fa9ba
+    ID             : 1efae8b3e4bbd89f
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.218101185 +0000 UTC
+    End time       : 2026-03-18 04:43:41.220722127 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> thread.id: Int(58)
+Span #45
+    Trace ID       : 54dafb63f42eb2d2e63867c3f4ff7369
+    Parent ID      : 4d113ddbedeaf9a9
+    ID             : 564f914724f5c736
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.230418319 +0000 UTC
+    End time       : 2026-03-18 04:43:41.233530171 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> thread.id: Int(59)
+Span #46
+    Trace ID       : 5ca9a9ab83bb8dd589ecc1e0d9e652d4
+    Parent ID      : ea01fbfba4f101aa
+    ID             : 5d5ff1995aa3a4e0
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.243246129 +0000 UTC
+    End time       : 2026-03-18 04:43:41.245851712 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> thread.id: Int(60)
+Span #47
+    Trace ID       : 13035454481997306101d5d41fa21f30
+    Parent ID      : b0cc41021a4fa536
+    ID             : 072e74208a79d890
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.254546536 +0000 UTC
+    End time       : 2026-03-18 04:43:41.25719015 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> thread.id: Int(61)
+Span #48
+    Trace ID       : f08728dffbafa96130f8979b0346fc3b
+    Parent ID      : 60d93bffbe34ba5d
+    ID             : 43e59fd646e7553e
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.265707683 +0000 UTC
+    End time       : 2026-03-18 04:43:41.268637844 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> thread.id: Int(62)
+Span #49
+    Trace ID       : 27d2f641827d1eb8ce5875fbe29622cd
+    Parent ID      : a51fe2cf6ebd3450
+    ID             : c6946452dee67575
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.277969522 +0000 UTC
+    End time       : 2026-03-18 04:43:41.280397282 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> thread.id: Int(63)
+Span #50
+    Trace ID       : ec5b19ffa265280e77221081c0fd120e
+    Parent ID      : e7cc1aa009784266
+    ID             : 71d8699ac68346a6
+    Name           : OperationHandler.handle
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.288804558 +0000 UTC
+    End time       : 2026-03-18 04:43:41.290639277 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+Span #51
+    Trace ID       : c32af17bd10098c69da6d4a7efa79e02
+    Parent ID      : f2cf9f7e5479af9e
+    ID             : e1baeff9efbda2e7
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.300771835 +0000 UTC
+    End time       : 2026-03-18 04:43:41.309405295 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(55)
+Span #52
+    Trace ID       : 958a483bf08f8bf63df0d1a0f8ee6298
+    Parent ID      : 63cd82a6bed73b0b
+    ID             : ad2c08411495fa9a
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.3206993 +0000 UTC
+    End time       : 2026-03-18 04:43:41.322036075 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> thread.id: Int(56)
+Span #53
+    Trace ID       : 1035114cef9fa6b1e6545a8d3fb944c4
+    Parent ID      : 536eac088d53a249
+    ID             : c02f2397278db3ff
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.330454952 +0000 UTC
+    End time       : 2026-03-18 04:43:41.331279337 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> thread.id: Int(57)
+Span #54
+    Trace ID       : 36bea5c231015653f6701bb76e0857f9
+    Parent ID      : cea0d340c9a91464
+    ID             : d45956d840e45846
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.339237611 +0000 UTC
+    End time       : 2026-03-18 04:43:41.340208922 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> thread.id: Int(58)
+Span #55
+    Trace ID       : c5a738fa22a9f7c9f3ee78156be50416
+    Parent ID      : f47184e1d5c4909d
+    ID             : e5543ee9f5f6c4b9
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.348015843 +0000 UTC
+    End time       : 2026-03-18 04:43:41.349024513 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> thread.id: Int(59)
+Span #56
+    Trace ID       : aa5a89bf6ba17d9a6f4e7107f297854e
+    Parent ID      : 2fe37bdfae1beb2e
+    ID             : 9fc9653a8ae42455
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.356474335 +0000 UTC
+    End time       : 2026-03-18 04:43:41.357387736 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> thread.id: Int(60)
+Span #57
+    Trace ID       : 5a87aa0ceb0e39a9c74fa1da15472877
+    Parent ID      : 7c8ac1ff4056f42f
+    ID             : d519e3f520b63cca
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.36431631 +0000 UTC
+    End time       : 2026-03-18 04:43:41.365092395 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> thread.id: Int(61)
+Span #58
+    Trace ID       : 2a470a44e1c5df3d970cec74d2a628e0
+    Parent ID      : 56871a9c9f1b1def
+    ID             : c281f570570ac73b
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.372770564 +0000 UTC
+    End time       : 2026-03-18 04:43:41.373796196 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> thread.id: Int(62)
+Span #59
+    Trace ID       : bae3dda88214fb1fed372ca1fda5b0bb
+    Parent ID      : 269603537866caf0
+    ID             : 88c75fa935bacaf4
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.383652719 +0000 UTC
+    End time       : 2026-03-18 04:43:41.384343904 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> thread.id: Int(63)
+Span #60
+    Trace ID       : 78e307c9f06e48e208da4622e44a2e4e
+    Parent ID      : 0d573d8524f97783
+    ID             : a988344e76a08543
+    Name           : WorkController.work
+    Kind           : Internal
+    Start time     : 2026-03-18 04:43:41.392763442 +0000 UTC
+    End time       : 2026-03-18 04:43:41.393915962 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> thread.id: Int(54)
+ScopeSpans #1
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.tomcat-10.0 1.28.0-alpha
+Span #0
+    Trace ID       : bb9726a4f26cc6a8398a8ade3646a9c7
+    Parent ID      : 
+    ID             : c94f385d98f74aff
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.450466059 +0000 UTC
+    End time       : 2026-03-18 04:43:40.678510576 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45854)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+Span #1
+    Trace ID       : cd727e85224aa1b5d468cf8cbce2c7c3
+    Parent ID      : 
+    ID             : 18f2791b2b9e288a
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.687222522 +0000 UTC
+    End time       : 2026-03-18 04:43:40.693776825 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45858)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(55)
+Span #2
+    Trace ID       : 4bca556116721aee7661a5add58eb5aa
+    Parent ID      : 
+    ID             : 77d087e5877a81a2
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.701904006 +0000 UTC
+    End time       : 2026-03-18 04:43:40.706466676 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45860)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(56)
+Span #3
+    Trace ID       : bd2a5e98725253f6a5cdb34bbd3d664d
+    Parent ID      : 
+    ID             : 08c34ca823ba0e76
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.712947332 +0000 UTC
+    End time       : 2026-03-18 04:43:40.717189522 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45868)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(57)
+Span #4
+    Trace ID       : 98f2c8f68a3c34e66935fcc784a7ae6a
+    Parent ID      : 
+    ID             : 4804b47b3ae230b4
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.724830121 +0000 UTC
+    End time       : 2026-03-18 04:43:40.730462035 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45872)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(58)
+Span #5
+    Trace ID       : 07ab326f83698e0b489208164c167dab
+    Parent ID      : 
+    ID             : b1fc62693dddc2a2
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.737956089 +0000 UTC
+    End time       : 2026-03-18 04:43:40.743186882 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45886)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(59)
+Span #6
+    Trace ID       : df2548be3aba742f46bc92cfdac7301d
+    Parent ID      : 
+    ID             : d21fbd2e372125a3
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.750870171 +0000 UTC
+    End time       : 2026-03-18 04:43:40.755999355 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45892)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(60)
+Span #7
+    Trace ID       : 036a5bdbfcf4b9932bfecd031eafbae5
+    Parent ID      : 
+    ID             : 967bf5edbfdf6f0d
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.763170051 +0000 UTC
+    End time       : 2026-03-18 04:43:40.767276376 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45902)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(61)
+Span #8
+    Trace ID       : b61e0e7726f2d46d93ef49ae0e76a628
+    Parent ID      : 
+    ID             : 3203e46c4a3359d8
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.773933312 +0000 UTC
+    End time       : 2026-03-18 04:43:40.779038119 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45910)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(62)
+Span #9
+    Trace ID       : ca3fcfcf9e6e86166c94e3c9e6f33d4a
+    Parent ID      : 
+    ID             : 3131524acbde1eac
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.785518915 +0000 UTC
+    End time       : 2026-03-18 04:43:40.789690262 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45912)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(63)
+Span #10
+    Trace ID       : 5d51de947f943d76d1c7e7d8a90cfa41
+    Parent ID      : 
+    ID             : 994ed848be977891
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.797461075 +0000 UTC
+    End time       : 2026-03-18 04:43:40.802826059 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45928)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+Span #11
+    Trace ID       : dc6d28f08f41be005d6ca773c0e1299d
+    Parent ID      : 
+    ID             : 7c62813408ae4c42
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.809853098 +0000 UTC
+    End time       : 2026-03-18 04:43:40.813533015 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45936)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(55)
+Span #12
+    Trace ID       : 5ebeaa4441a0647ec87ad692ab19cd4e
+    Parent ID      : 
+    ID             : b020f3fe1ac46de1
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.820562849 +0000 UTC
+    End time       : 2026-03-18 04:43:40.825457422 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45946)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(56)
+Span #13
+    Trace ID       : 3e498af3f4b1f054e3aae4053f2f8f9f
+    Parent ID      : 
+    ID             : 1e657feace187efe
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.832494338 +0000 UTC
+    End time       : 2026-03-18 04:43:40.837216257 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45956)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(57)
+Span #14
+    Trace ID       : f1b03f268f642f598cf7a59df9961974
+    Parent ID      : 
+    ID             : c6a320ab9f5872f6
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.844229832 +0000 UTC
+    End time       : 2026-03-18 04:43:40.849148981 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45958)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(58)
+Span #15
+    Trace ID       : 9b603048ccb421ccefec928884054bf6
+    Parent ID      : 
+    ID             : 7f7cac04c3fd5f12
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.855964214 +0000 UTC
+    End time       : 2026-03-18 04:43:40.862010464 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45964)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(59)
+Span #16
+    Trace ID       : 2712d8a6142793eab4b6bb8de8c9aa37
+    Parent ID      : 
+    ID             : 4a63c45bf109bfeb
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.875009173 +0000 UTC
+    End time       : 2026-03-18 04:43:40.88034296 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45968)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(60)
+Span #17
+    Trace ID       : 821414a79449c2b3fac5372e4757cf39
+    Parent ID      : 
+    ID             : 326a51fd5274feaf
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.887544625 +0000 UTC
+    End time       : 2026-03-18 04:43:40.891836087 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45982)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(61)
+Span #18
+    Trace ID       : 5364ff7c24de3f96ba0889bfb82f0520
+    Parent ID      : 
+    ID             : b377ee3d90201efe
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.902225338 +0000 UTC
+    End time       : 2026-03-18 04:43:40.906966914 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(45998)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(62)
+Span #19
+    Trace ID       : e499fc00ffef9debd85eff57bb9a4def
+    Parent ID      : 
+    ID             : 5c6b10599834c7be
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.913329949 +0000 UTC
+    End time       : 2026-03-18 04:43:40.917093091 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46004)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(63)
+Span #20
+    Trace ID       : c3a1f6bc5f80cdd2c76691fff518736b
+    Parent ID      : 
+    ID             : d4c741dd3270687c
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.924732047 +0000 UTC
+    End time       : 2026-03-18 04:43:40.928477055 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46016)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+Span #21
+    Trace ID       : be012ce4cab9dccae3fee7fc9216ebc0
+    Parent ID      : 
+    ID             : 982ef22b587de8e6
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.93546429 +0000 UTC
+    End time       : 2026-03-18 04:43:40.940448601 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46024)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(55)
+Span #22
+    Trace ID       : 0b78c77a3a62cf55edac9bfac4aee1d2
+    Parent ID      : 
+    ID             : 991f96b6562b51b5
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.947910595 +0000 UTC
+    End time       : 2026-03-18 04:43:40.952158175 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46030)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(56)
+Span #23
+    Trace ID       : 44559dd0d2ee96c558641ea2224663bc
+    Parent ID      : 
+    ID             : c79aec2dec438fea
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.959441896 +0000 UTC
+    End time       : 2026-03-18 04:43:40.964206816 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46042)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(57)
+Span #24
+    Trace ID       : 5ab0e66ee5c212eff137eb0f250ade06
+    Parent ID      : 
+    ID             : 2325f7aa3b13d3b8
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.971255624 +0000 UTC
+    End time       : 2026-03-18 04:43:40.975443252 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46056)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(58)
+Span #25
+    Trace ID       : 3c74cd76927acfe6d35e5ae3dffb790b
+    Parent ID      : 
+    ID             : fc09ccfa11a41f19
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.982043802 +0000 UTC
+    End time       : 2026-03-18 04:43:40.986351224 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46070)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(59)
+Span #26
+    Trace ID       : 241a1ff7a634c4fe39214350631189b0
+    Parent ID      : 
+    ID             : 011756fd2a10f454
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:40.993342837 +0000 UTC
+    End time       : 2026-03-18 04:43:40.996745283 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46080)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(60)
+Span #27
+    Trace ID       : 29b8fc0fac56591a44c75bce82315433
+    Parent ID      : 
+    ID             : f66f9613a76d7f33
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.004776595 +0000 UTC
+    End time       : 2026-03-18 04:43:41.010095182 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46090)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(61)
+Span #28
+    Trace ID       : 174309ab73a660dc18c3c3a946d59c87
+    Parent ID      : 
+    ID             : c9707c3f13b89d2f
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.017141317 +0000 UTC
+    End time       : 2026-03-18 04:43:41.023369077 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46106)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(62)
+Span #29
+    Trace ID       : cce57d4fd6bd74ffd300639c4163b404
+    Parent ID      : 
+    ID             : 5738e100d85181b3
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.032934373 +0000 UTC
+    End time       : 2026-03-18 04:43:41.03737792 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46122)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(63)
+Span #30
+    Trace ID       : 62b8058c171ee2fb15cbb8ea0a8dd628
+    Parent ID      : 
+    ID             : 07fde81b24f7cc2d
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.044578456 +0000 UTC
+    End time       : 2026-03-18 04:43:41.047859274 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46136)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+Span #31
+    Trace ID       : e67e58d771bbd83f40b93c51c4911470
+    Parent ID      : 
+    ID             : 3b62cf354aa6bb95
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.054583555 +0000 UTC
+    End time       : 2026-03-18 04:43:41.058400699 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46138)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(55)
+Span #32
+    Trace ID       : 05c5a5ffecde93184cb3a6ff7306c6f4
+    Parent ID      : 
+    ID             : 6aa0e13c1827aee6
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.064855165 +0000 UTC
+    End time       : 2026-03-18 04:43:41.068223368 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46140)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(56)
+Span #33
+    Trace ID       : a86278fe21a6ffbc394f3285475d39d2
+    Parent ID      : 
+    ID             : 9ce7ff9006d0808f
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.074002928 +0000 UTC
+    End time       : 2026-03-18 04:43:41.077035291 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46150)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(57)
+Span #34
+    Trace ID       : 6518dbaff9e7220e5b5d828a94d3e923
+    Parent ID      : 
+    ID             : 862acbb77d667fa9
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.083471994 +0000 UTC
+    End time       : 2026-03-18 04:43:41.08677338 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46164)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(58)
+Span #35
+    Trace ID       : c91f34264bbd879b3b4cebc974b57147
+    Parent ID      : 
+    ID             : 1078f639a53fe395
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.093218179 +0000 UTC
+    End time       : 2026-03-18 04:43:41.096475222 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46170)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(59)
+Span #36
+    Trace ID       : 4ed937bff7ed34fef892e34da7082e31
+    Parent ID      : 
+    ID             : 2a1e0af0b6b82f4c
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.10254655 +0000 UTC
+    End time       : 2026-03-18 04:43:41.10701333 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46178)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(60)
+Span #37
+    Trace ID       : 33fae2a87e1fbae2b7d1941d995a72be
+    Parent ID      : 
+    ID             : e4976baf5fc7455d
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.11301548 +0000 UTC
+    End time       : 2026-03-18 04:43:41.116253838 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46186)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(61)
+Span #38
+    Trace ID       : 9642b5e79c398979f4f26b570c1bfe6a
+    Parent ID      : 
+    ID             : cf41bf733943b20a
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.122541091 +0000 UTC
+    End time       : 2026-03-18 04:43:41.125688118 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46194)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(62)
+Span #39
+    Trace ID       : 295450dee385eab2fdd47646cfc5acb7
+    Parent ID      : 
+    ID             : 124c46ba075e2abf
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.13540552 +0000 UTC
+    End time       : 2026-03-18 04:43:41.139259111 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46200)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(63)
+Span #40
+    Trace ID       : 80970c938b397146c8241aaf1bca75a1
+    Parent ID      : 
+    ID             : 31a7c3267c8a9a48
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.147078055 +0000 UTC
+    End time       : 2026-03-18 04:43:41.154910263 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46206)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+Span #41
+    Trace ID       : 034ceb5accd216e6d973c6fef620f2ec
+    Parent ID      : 
+    ID             : 23354e4062e43f34
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.165205126 +0000 UTC
+    End time       : 2026-03-18 04:43:41.173743968 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46216)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(55)
+Span #42
+    Trace ID       : a10d2a9a44b62a10ccf69da7d7314c40
+    Parent ID      : 
+    ID             : 61b4dd86e11cb801
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.183283766 +0000 UTC
+    End time       : 2026-03-18 04:43:41.193195871 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46232)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(56)
+Span #43
+    Trace ID       : 9309116bb048ddad025f380e20534195
+    Parent ID      : 
+    ID             : 96198e56831db8d2
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.204546904 +0000 UTC
+    End time       : 2026-03-18 04:43:41.210051891 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46248)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(57)
+Span #44
+    Trace ID       : 98944f42e2ef5616345fe5c55045f352
+    Parent ID      : 
+    ID             : 36f17da4ae6fa9ba
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.216989813 +0000 UTC
+    End time       : 2026-03-18 04:43:41.221428962 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46264)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(58)
+Span #45
+    Trace ID       : 54dafb63f42eb2d2e63867c3f4ff7369
+    Parent ID      : 
+    ID             : 4d113ddbedeaf9a9
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.22893553 +0000 UTC
+    End time       : 2026-03-18 04:43:41.234215335 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46268)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(59)
+Span #46
+    Trace ID       : 5ca9a9ab83bb8dd589ecc1e0d9e652d4
+    Parent ID      : 
+    ID             : ea01fbfba4f101aa
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.242106593 +0000 UTC
+    End time       : 2026-03-18 04:43:41.246616284 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46278)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(60)
+Span #47
+    Trace ID       : 13035454481997306101d5d41fa21f30
+    Parent ID      : 
+    ID             : b0cc41021a4fa536
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.253467514 +0000 UTC
+    End time       : 2026-03-18 04:43:41.257818087 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46290)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(61)
+Span #48
+    Trace ID       : f08728dffbafa96130f8979b0346fc3b
+    Parent ID      : 
+    ID             : 60d93bffbe34ba5d
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.26443603 +0000 UTC
+    End time       : 2026-03-18 04:43:41.269356911 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46296)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(62)
+Span #49
+    Trace ID       : 27d2f641827d1eb8ce5875fbe29622cd
+    Parent ID      : 
+    ID             : a51fe2cf6ebd3450
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.276877976 +0000 UTC
+    End time       : 2026-03-18 04:43:41.280996936 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46312)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(63)
+Span #50
+    Trace ID       : ec5b19ffa265280e77221081c0fd120e
+    Parent ID      : 
+    ID             : e7cc1aa009784266
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.287997214 +0000 UTC
+    End time       : 2026-03-18 04:43:41.291108415 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/actuator/health)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/actuator/health)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46324)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+Span #51
+    Trace ID       : c32af17bd10098c69da6d4a7efa79e02
+    Parent ID      : 
+    ID             : f2cf9f7e5479af9e
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.297229797 +0000 UTC
+    End time       : 2026-03-18 04:43:41.310569597 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46330)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(55)
+Span #52
+    Trace ID       : 958a483bf08f8bf63df0d1a0f8ee6298
+    Parent ID      : 
+    ID             : 63cd82a6bed73b0b
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.319018861 +0000 UTC
+    End time       : 2026-03-18 04:43:41.322784026 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-3)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46344)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(56)
+Span #53
+    Trace ID       : 1035114cef9fa6b1e6545a8d3fb944c4
+    Parent ID      : 
+    ID             : 536eac088d53a249
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.329448055 +0000 UTC
+    End time       : 2026-03-18 04:43:41.331863532 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46356)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(57)
+Span #54
+    Trace ID       : 36bea5c231015653f6701bb76e0857f9
+    Parent ID      : 
+    ID             : cea0d340c9a91464
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.338331994 +0000 UTC
+    End time       : 2026-03-18 04:43:41.340766917 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46366)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(58)
+Span #55
+    Trace ID       : c5a738fa22a9f7c9f3ee78156be50416
+    Parent ID      : 
+    ID             : f47184e1d5c4909d
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.347065772 +0000 UTC
+    End time       : 2026-03-18 04:43:41.349549147 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-6)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46382)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(59)
+Span #56
+    Trace ID       : aa5a89bf6ba17d9a6f4e7107f297854e
+    Parent ID      : 
+    ID             : 2fe37bdfae1beb2e
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.355579527 +0000 UTC
+    End time       : 2026-03-18 04:43:41.357878607 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-7)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46388)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(60)
+Span #57
+    Trace ID       : 5a87aa0ceb0e39a9c74fa1da15472877
+    Parent ID      : 
+    ID             : 7c8ac1ff4056f42f
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.363619695 +0000 UTC
+    End time       : 2026-03-18 04:43:41.365514085 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-8)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46390)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(61)
+Span #58
+    Trace ID       : 2a470a44e1c5df3d970cec74d2a628e0
+    Parent ID      : 
+    ID             : 56871a9c9f1b1def
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.371429281 +0000 UTC
+    End time       : 2026-03-18 04:43:41.374469317 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-9)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46404)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(62)
+Span #59
+    Trace ID       : bae3dda88214fb1fed372ca1fda5b0bb
+    Parent ID      : 
+    ID             : 269603537866caf0
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.382813516 +0000 UTC
+    End time       : 2026-03-18 04:43:41.384765154 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-10)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46416)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(63)
+Span #60
+    Trace ID       : 78e307c9f06e48e208da4622e44a2e4e
+    Parent ID      : 
+    ID             : 0d573d8524f97783
+    Name           : GET /api/work
+    Kind           : Server
+    Start time     : 2026-03-18 04:43:41.391227293 +0000 UTC
+    End time       : 2026-03-18 04:43:41.394592339 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> http.scheme: Str(http)
+     -> net.protocol.version: Str(1.1)
+     -> http.method: Str(GET)
+     -> net.protocol.name: Str(http)
+     -> http.route: Str(/api/work)
+     -> net.sock.host.addr: Str(10.132.0.127)
+     -> http.status_code: Int(200)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> net.host.port: Int(8080)
+     -> http.target: Str(/api/work)
+     -> net.sock.peer.addr: Str(10.132.0.129)
+     -> net.sock.peer.port: Int(46426)
+     -> user_agent.original: Str(curl/8.7.1)
+     -> net.host.name: Str(repro-app)
+     -> thread.id: Int(54)
+	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces"}

@@ -1,0 +1,19 @@
+camel:
+  opentelemetry:
+    enabled: true
+    exclude-patterns:
+      - ^(process|to).*
+    propagate-context: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+server:
+  port: 8080

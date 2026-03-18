@@ -1,0 +1,34 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      JAVA_TOOL_OPTIONS: >-
+        -javaagent:/app/opentelemetry-javaagent.jar
+        -Dotel.service.name=repro-app
+        -Dotel.traces.exporter=otlp
+        -Dotel.exporter.otlp.endpoint=http://otel-collector:4318
+        -Dotel.exporter.otlp.protocol=http/protobuf
+        -Dotel.metrics.exporter=none
+        -Dotel.logs.exporter=none
+        -Dotel.traces.sampler=always_on
+        ${EXTRA_JAVA_TOOL_OPTIONS:-}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - otel-collector
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.121.0
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes:
+      - ./otel/${COLLECTOR_CONFIG:-collector-baseline.yaml}:/etc/otelcol/config.yaml:Z
+    depends_on:
+      - jaeger
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.63.0
+    ports:
+      - "16686:16686"
+      - "4319:4317"
