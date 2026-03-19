@@ -1,0 +1,1249 @@
+2026-03-19T14:04:14.876Z	info	service@v0.121.0/service.go:193	Setting up own telemetry...
+2026-03-19T14:04:14.877Z	info	builders/builders.go:26	Development component. May change in the future.	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces"}
+2026-03-19T14:04:14.879Z	info	service@v0.121.0/service.go:258	Starting otelcol-contrib...	{"Version": "0.121.0", "NumCPU": 16}
+2026-03-19T14:04:14.879Z	info	extensions/extensions.go:40	Starting extensions...
+2026-03-19T14:04:14.879Z	info	otlpreceiver@v0.121.0/otlp.go:116	Starting GRPC server	{"otelcol.component.id": "otlp", "otelcol.component.kind": "Receiver", "endpoint": "0.0.0.0:4317"}
+2026-03-19T14:04:14.879Z	info	otlpreceiver@v0.121.0/otlp.go:173	Starting HTTP server	{"otelcol.component.id": "otlp", "otelcol.component.kind": "Receiver", "endpoint": "0.0.0.0:4318"}
+2026-03-19T14:04:14.879Z	info	service@v0.121.0/service.go:281	Everything is ready. Begin running and processing data.
+2026-03-19T14:04:27.700Z	info	Traces	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 72}
+2026-03-19T14:04:27.702Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.20.0
+Resource attributes:
+     -> container.id: Str(5ae0b57efa243240c19cb3a4ef3f127db7f09a5dd04f5138d59665c6d27f507e)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(redhat-otel2-app-74d987445b-pmsr4)
+     -> os.description: Str(Linux 5.14.0-427.111.1.el9_4.x86_64)
+     -> os.type: Str(linux)
+     -> process.command_args: Slice(["/opt/java/openjdk/bin/java","-javaagent:/app/opentelemetry-javaagent.jar","-Dotel.service.name=redhat-otel2-app","-Dotel.traces.exporter=otlp","-Dotel.exporter.otlp.endpoint=http://redhat-otel2-collector:4318","-Dotel.exporter.otlp.protocol=http/protobuf","-Dotel.metrics.exporter=none","-Dotel.logs.exporter=none","-Dotel.traces.sampler=always_on","-jar","/app/app.jar"])
+     -> process.executable.path: Str(/opt/java/openjdk/bin/java)
+     -> process.pid: Int(2)
+     -> process.runtime.description: Str(Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.10+7-LTS)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-LTS)
+     -> service.name: Str(redhat-otel2-app)
+     -> telemetry.auto.version: Str(1.28.0)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.28.0)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope camel 
+Span #0
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : 8575c0988f53e0f9
+    ID             : c5ef0626de3896a5
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.236725507 +0000 UTC
+    End time       : 2026-03-19 14:04:23.236830364 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_PROCESS)
+Span #1
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : 1159cba4d8c2186b
+    ID             : 79601867bb796ebd
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.241154828 +0000 UTC
+    End time       : 2026-03-19 14:04:23.251791481 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_PROCESS)
+Span #2
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : 1159cba4d8c2186b
+    ID             : b3effd43dcbee0fa
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.252238909 +0000 UTC
+    End time       : 2026-03-19 14:04:23.274769732 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_PROCESS)
+Span #3
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : d76c400bdca0814e
+    ID             : 1159cba4d8c2186b
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.240636917 +0000 UTC
+    End time       : 2026-03-19 14:04:23.275287283 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_RECEIVED)
+Span #4
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : e3d872b0789a856b
+    ID             : d76c400bdca0814e
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.239711043 +0000 UTC
+    End time       : 2026-03-19 14:04:23.27659373 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_SENT)
+Span #5
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : 8575c0988f53e0f9
+    ID             : e3d872b0789a856b
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.238728361 +0000 UTC
+    End time       : 2026-03-19 14:04:23.276646549 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_PROCESS)
+Span #6
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : 
+    ID             : 8575c0988f53e0f9
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.192223891 +0000 UTC
+    End time       : 2026-03-19 14:04:23.276986778 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000000)
+     -> op: Str(EVENT_RECEIVED)
+Span #7
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : 55341a5c4ae83057
+    ID             : cdc7068e5ce00448
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.66565961 +0000 UTC
+    End time       : 2026-03-19 14:04:23.665716887 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_PROCESS)
+Span #8
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : dd12ecf923310c12
+    ID             : 2e0c6960e4cfe8a8
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.666680854 +0000 UTC
+    End time       : 2026-03-19 14:04:23.667268525 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_PROCESS)
+Span #9
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : dd12ecf923310c12
+    ID             : 4388c43760cc7ef6
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.667496673 +0000 UTC
+    End time       : 2026-03-19 14:04:23.677863601 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_PROCESS)
+Span #10
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : 2b2e8c4106db6960
+    ID             : dd12ecf923310c12
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.666427189 +0000 UTC
+    End time       : 2026-03-19 14:04:23.678116203 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_RECEIVED)
+Span #11
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : e56ee984260fea1e
+    ID             : 2b2e8c4106db6960
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.66618252 +0000 UTC
+    End time       : 2026-03-19 14:04:23.678212083 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_SENT)
+Span #12
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : 55341a5c4ae83057
+    ID             : e56ee984260fea1e
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.665977507 +0000 UTC
+    End time       : 2026-03-19 14:04:23.678230909 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_PROCESS)
+Span #13
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : 
+    ID             : 55341a5c4ae83057
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.66507223 +0000 UTC
+    End time       : 2026-03-19 14:04:23.678363427 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000001)
+     -> op: Str(EVENT_RECEIVED)
+Span #14
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : 60963e77c9f38354
+    ID             : 10b90cc6b89625e4
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.165776142 +0000 UTC
+    End time       : 2026-03-19 14:04:24.165827579 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_PROCESS)
+Span #15
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : f77a73d812e93a1d
+    ID             : 7d48c85618f5dc1c
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.166808767 +0000 UTC
+    End time       : 2026-03-19 14:04:24.167153744 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_PROCESS)
+Span #16
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : f77a73d812e93a1d
+    ID             : 3ae7208b066b8034
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.167326097 +0000 UTC
+    End time       : 2026-03-19 14:04:24.177665142 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_PROCESS)
+Span #17
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : a639a7515e1f8c4a
+    ID             : f77a73d812e93a1d
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.166541947 +0000 UTC
+    End time       : 2026-03-19 14:04:24.177854537 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_RECEIVED)
+Span #18
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : 90277a96dfb78e3b
+    ID             : a639a7515e1f8c4a
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.166268465 +0000 UTC
+    End time       : 2026-03-19 14:04:24.177954925 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_SENT)
+Span #19
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : 60963e77c9f38354
+    ID             : 90277a96dfb78e3b
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.166064873 +0000 UTC
+    End time       : 2026-03-19 14:04:24.177966898 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_PROCESS)
+Span #20
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : 
+    ID             : 60963e77c9f38354
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.165221913 +0000 UTC
+    End time       : 2026-03-19 14:04:24.178080531 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000002)
+     -> op: Str(EVENT_RECEIVED)
+Span #21
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 068e4673cf56addb
+    ID             : 467f9665b726c0d4
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.665451767 +0000 UTC
+    End time       : 2026-03-19 14:04:24.665508183 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_PROCESS)
+Span #22
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 8149bbf032c5432a
+    ID             : 623834eccc3dbf7d
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.666498538 +0000 UTC
+    End time       : 2026-03-19 14:04:24.66680427 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_PROCESS)
+Span #23
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 8149bbf032c5432a
+    ID             : a978101087332dde
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.667014134 +0000 UTC
+    End time       : 2026-03-19 14:04:24.677431918 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_PROCESS)
+Span #24
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : fd18709ecf5bb9ee
+    ID             : 8149bbf032c5432a
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.666203565 +0000 UTC
+    End time       : 2026-03-19 14:04:24.677619549 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_RECEIVED)
+Span #25
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 09b6585921b64bb9
+    ID             : fd18709ecf5bb9ee
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.665952274 +0000 UTC
+    End time       : 2026-03-19 14:04:24.677764209 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_SENT)
+Span #26
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 068e4673cf56addb
+    ID             : 09b6585921b64bb9
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.665786353 +0000 UTC
+    End time       : 2026-03-19 14:04:24.677784237 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_PROCESS)
+Span #27
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 
+    ID             : 068e4673cf56addb
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.664875205 +0000 UTC
+    End time       : 2026-03-19 14:04:24.677943816 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000003)
+     -> op: Str(EVENT_RECEIVED)
+Span #28
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : 7019e66ceab876ce
+    ID             : f8f3535dc87ecb0a
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.165221316 +0000 UTC
+    End time       : 2026-03-19 14:04:25.165268043 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_PROCESS)
+Span #29
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : bbc19813d21aca63
+    ID             : 9999ae0dbf74e6a1
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.166120471 +0000 UTC
+    End time       : 2026-03-19 14:04:25.16654688 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_PROCESS)
+Span #30
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : bbc19813d21aca63
+    ID             : 04060d382c4a6b29
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.166727199 +0000 UTC
+    End time       : 2026-03-19 14:04:25.177095528 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_PROCESS)
+Span #31
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : d731c80568be087c
+    ID             : bbc19813d21aca63
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.165812324 +0000 UTC
+    End time       : 2026-03-19 14:04:25.17736303 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_RECEIVED)
+Span #32
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : 06a5c842449a7e98
+    ID             : d731c80568be087c
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.165611127 +0000 UTC
+    End time       : 2026-03-19 14:04:25.177461385 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_SENT)
+Span #33
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : 7019e66ceab876ce
+    ID             : 06a5c842449a7e98
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.165467608 +0000 UTC
+    End time       : 2026-03-19 14:04:25.177475571 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_PROCESS)
+Span #34
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : 
+    ID             : 7019e66ceab876ce
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.164694139 +0000 UTC
+    End time       : 2026-03-19 14:04:25.177678702 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000004)
+     -> op: Str(EVENT_RECEIVED)
+Span #35
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : 7a92dc8f4c8cff40
+    ID             : 6c0caf4c80edf380
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.66596331 +0000 UTC
+    End time       : 2026-03-19 14:04:25.666011941 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_PROCESS)
+Span #36
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : 937a4c48f2eb0b6f
+    ID             : 127fa4bb5a80b6bb
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.666824404 +0000 UTC
+    End time       : 2026-03-19 14:04:25.667160093 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_PROCESS)
+Span #37
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : 937a4c48f2eb0b6f
+    ID             : 4d3f1fee2ed8e8b3
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.667299523 +0000 UTC
+    End time       : 2026-03-19 14:04:25.677703982 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_PROCESS)
+Span #38
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : f718c8829ce23cf4
+    ID             : 937a4c48f2eb0b6f
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.666615712 +0000 UTC
+    End time       : 2026-03-19 14:04:25.677858732 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_RECEIVED)
+Span #39
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : c578108f23f5e4a2
+    ID             : f718c8829ce23cf4
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.666392173 +0000 UTC
+    End time       : 2026-03-19 14:04:25.677970512 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_SENT)
+Span #40
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : 7a92dc8f4c8cff40
+    ID             : c578108f23f5e4a2
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.666243865 +0000 UTC
+    End time       : 2026-03-19 14:04:25.677987734 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_PROCESS)
+Span #41
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : 
+    ID             : 7a92dc8f4c8cff40
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.665513366 +0000 UTC
+    End time       : 2026-03-19 14:04:25.678152332 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000005)
+     -> op: Str(EVENT_RECEIVED)
+Span #42
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : 0f4a3c88da1fced9
+    ID             : d124a1471481ffae
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.165572981 +0000 UTC
+    End time       : 2026-03-19 14:04:26.165617122 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_PROCESS)
+Span #43
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : 8007762179ccee4b
+    ID             : ed70d932e270a0c0
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.166493334 +0000 UTC
+    End time       : 2026-03-19 14:04:26.166811811 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_PROCESS)
+Span #44
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : 8007762179ccee4b
+    ID             : d9ec49513737325d
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.166993943 +0000 UTC
+    End time       : 2026-03-19 14:04:26.177399292 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_PROCESS)
+Span #45
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : 83941ae624878638
+    ID             : 8007762179ccee4b
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.166260448 +0000 UTC
+    End time       : 2026-03-19 14:04:26.177668777 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_RECEIVED)
+Span #46
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : d282e90ae0a3d9c4
+    ID             : 83941ae624878638
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.166091892 +0000 UTC
+    End time       : 2026-03-19 14:04:26.177782942 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_SENT)
+Span #47
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : 0f4a3c88da1fced9
+    ID             : d282e90ae0a3d9c4
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.16586643 +0000 UTC
+    End time       : 2026-03-19 14:04:26.177801556 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_PROCESS)
+Span #48
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : 
+    ID             : 0f4a3c88da1fced9
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.165062163 +0000 UTC
+    End time       : 2026-03-19 14:04:26.178082122 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000006)
+     -> op: Str(EVENT_RECEIVED)
+Span #49
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : 320c6bfce22981df
+    ID             : e3b12229ea50d61c
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.665220551 +0000 UTC
+    End time       : 2026-03-19 14:04:26.665279681 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_PROCESS)
+Span #50
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : 41ee0eee6d38190d
+    ID             : c849d1e639daa63c
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.666104928 +0000 UTC
+    End time       : 2026-03-19 14:04:26.666459543 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_PROCESS)
+Span #51
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : 41ee0eee6d38190d
+    ID             : f5f5a3e6a1fafce8
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.666626445 +0000 UTC
+    End time       : 2026-03-19 14:04:26.676994085 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_PROCESS)
+Span #52
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : e7db0e0359086c79
+    ID             : 41ee0eee6d38190d
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.665895496 +0000 UTC
+    End time       : 2026-03-19 14:04:26.677096527 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_RECEIVED)
+Span #53
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : 4e364c6a3efe50f5
+    ID             : e7db0e0359086c79
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.665680723 +0000 UTC
+    End time       : 2026-03-19 14:04:26.677174984 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_SENT)
+Span #54
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : 320c6bfce22981df
+    ID             : 4e364c6a3efe50f5
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.665473515 +0000 UTC
+    End time       : 2026-03-19 14:04:26.677187748 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_PROCESS)
+Span #55
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : 
+    ID             : 320c6bfce22981df
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.664783081 +0000 UTC
+    End time       : 2026-03-19 14:04:26.677519569 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000007)
+     -> op: Str(EVENT_RECEIVED)
+Span #56
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : af4b84a9b556f415
+    ID             : 03c00a3aa7c07c5b
+    Name           : processValidate-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.165813233 +0000 UTC
+    End time       : 2026-03-19 14:04:27.165948537 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processValidate-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_PROCESS)
+Span #57
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : e214a3340b9c9a54
+    ID             : 4870a3724d177f08
+    Name           : processAsync-process
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.166987424 +0000 UTC
+    End time       : 2026-03-19 14:04:27.167378457 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(processAsync-process)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_PROCESS)
+Span #58
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : e214a3340b9c9a54
+    ID             : 82f5d8161fbcd477
+    Name           : afterDelay-delay
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.16755618 +0000 UTC
+    End time       : 2026-03-19 14:04:27.178068731 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(afterDelay-delay)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_PROCESS)
+Span #59
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : 7a837a920ec0d694
+    ID             : e214a3340b9c9a54
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.166703853 +0000 UTC
+    End time       : 2026-03-19 14:04:27.178271241 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_RECEIVED)
+Span #60
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : 06d9013bc09fe64f
+    ID             : 7a837a920ec0d694
+    Name           : internal
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.166470366 +0000 UTC
+    End time       : 2026-03-19 14:04:27.178391837 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(direct)
+     -> camel.uri: Str(direct://internal)
+     -> component: Str(camel-direct)
+     -> url.path: Str(internal)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_SENT)
+Span #61
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : af4b84a9b556f415
+    ID             : 06d9013bc09fe64f
+    Name           : toInternal-to
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.166230486 +0000 UTC
+    End time       : 2026-03-19 14:04:27.178413015 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> component: Str(toInternal-to)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_PROCESS)
+Span #62
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : 
+    ID             : af4b84a9b556f415
+    Name           : timer
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.165247624 +0000 UTC
+    End time       : 2026-03-19 14:04:27.178537489 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(Camel (camel-1) thread #1 - timer://tick)
+     -> url.scheme: Str(timer)
+     -> camel.uri: Str(timer://tick?delay=1000&period=500&repeatCount=10)
+     -> component: Str(camel-timer)
+     -> url.query: Str(delay=1000&period=500&repeatCount=10)
+     -> url.path: Str(tick)
+     -> thread.id: Int(52)
+     -> exchangeId: Str(F25F97CE40BB5FC-0000000000000008)
+     -> op: Str(EVENT_RECEIVED)
+ScopeSpans #1
+ScopeSpans SchemaURL: 
+InstrumentationScope redhat-spring-test 
+Span #0
+    Trace ID       : 8c452afbf66d34f892c88773117983a9
+    Parent ID      : 79601867bb796ebd
+    ID             : 1d9c2857b4867ddf
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.251496037 +0000 UTC
+    End time       : 2026-03-19 14:04:23.251565487 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #1
+    Trace ID       : a7c30a0f110a65c0dfce498131d1f67c
+    Parent ID      : 2e0c6960e4cfe8a8
+    ID             : b7672885034de734
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:23.6670681 +0000 UTC
+    End time       : 2026-03-19 14:04:23.667163839 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #2
+    Trace ID       : 7aebbb599b638b2cc49d779e3d700ffa
+    Parent ID      : 7d48c85618f5dc1c
+    ID             : 2e7df86d618451cf
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.167048416 +0000 UTC
+    End time       : 2026-03-19 14:04:24.167085476 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #3
+    Trace ID       : f7d9c9abff34f1dce3553fee356ad23b
+    Parent ID      : 623834eccc3dbf7d
+    ID             : 110135b8dc5b588e
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:24.666705547 +0000 UTC
+    End time       : 2026-03-19 14:04:24.666736514 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #4
+    Trace ID       : 28577093fa28eea3068fec2af5f35059
+    Parent ID      : 9999ae0dbf74e6a1
+    ID             : 34c61e8dbc16fef9
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.166453265 +0000 UTC
+    End time       : 2026-03-19 14:04:25.166488411 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #5
+    Trace ID       : 3ed84340e242de4b1198b2a4e252dd3c
+    Parent ID      : 127fa4bb5a80b6bb
+    ID             : c166ca66ca441b11
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:25.667034888 +0000 UTC
+    End time       : 2026-03-19 14:04:25.667098518 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #6
+    Trace ID       : a6e496482dd9b3b1c1f234afc8ce17ba
+    Parent ID      : ed70d932e270a0c0
+    ID             : 4c37d7bdff201b38
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.166688861 +0000 UTC
+    End time       : 2026-03-19 14:04:26.166717154 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #7
+    Trace ID       : eacb1ad47eec16971d46f94ef378d073
+    Parent ID      : c849d1e639daa63c
+    ID             : bbe08fb2cf426aab
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:26.666324439 +0000 UTC
+    End time       : 2026-03-19 14:04:26.666395423 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+Span #8
+    Trace ID       : e1a29d0df30d95099ce43c8109c915ed
+    Parent ID      : 4870a3724d177f08
+    ID             : 228242881d274e1d
+    Name           : async-custom-span
+    Kind           : Internal
+    Start time     : 2026-03-19 14:04:27.167237663 +0000 UTC
+    End time       : 2026-03-19 14:04:27.167268371 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> thread.name: Str(pool-4-thread-1)
+     -> thread.id: Int(54)
+	{"otelcol.component.id": "debug", "otelcol.component.kind": "Exporter", "otelcol.signal": "traces"}

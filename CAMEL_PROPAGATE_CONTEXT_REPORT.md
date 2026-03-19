@@ -175,6 +175,139 @@ mvn -Dtest=CamelExcludePatternsPropagationTest test
 MESSAGE_COUNT=100 ./scripts/prove_exclude_patterns_difference.sh
 ```
 
+## Community `camel-opentelemetry2-starter` の OpenShift 実証
+
+コミュニティ版 `camel-opentelemetry2-starter` については、別モジュール
+`community-opentelemetry2-springboot-check` を用いて OpenShift 実証も行いました。
+
+主なファイル:
+
+- `community-opentelemetry2-springboot-check/src/main/resources/application.yml`
+- `community-opentelemetry2-springboot-check/openshift/stack.yaml`
+- `community-opentelemetry2-springboot-check/scripts/prove_opentelemetry2_springboot_openshift.sh`
+
+設定は文字列形式で `exclude-patterns` を指定しています。
+
+```yaml
+camel:
+  opentelemetry2:
+    enabled: true
+    trace-processors: true
+    exclude-patterns: "process*,to*"
+```
+
+OpenShift 実証スクリプト:
+
+```bash
+cd community-opentelemetry2-springboot-check
+./scripts/prove_opentelemetry2_springboot_openshift.sh
+```
+
+実測結果:
+
+- `async-custom-span count`: `10`
+- `processValidate-process cnt`: `0`
+- `processAsync-process cnt`: `0`
+- `toInternal-to count`: `0`
+
+解釈:
+
+- custom async span は collector まで到達しており、span propagation は維持されている
+- 一方で不要な processor / to span は出力されておらず、出力抑制も成立している
+
+したがって、少なくとも今回の OpenShift 実証条件では、community 版 `camel-opentelemetry2-starter` でも
+**span をプロパゲーションしつつ、不要な出力を抑える**動作を確認できました。
+
+## Red Hat build `camel-opentelemetry2-starter` の実装・実証
+
+Red Hat ビルド版については、別プロジェクト `redhat-opentelemetry2-springboot-check` を追加し、
+`camel-opentelemetry2-starter` を使ったローカル検証と OpenShift 実証を行いました。
+
+主なファイル:
+
+- `redhat-opentelemetry2-springboot-check/pom.xml`
+- `redhat-opentelemetry2-springboot-check/src/main/resources/application.yml`
+- `redhat-opentelemetry2-springboot-check/src/main/java/com/example/redhatspring/RedHatRouteConfiguration.java`
+- `redhat-opentelemetry2-springboot-check/src/test/java/com/example/redhatspring/RedHatOpenTelemetry2SpringBootTest.java`
+- `redhat-opentelemetry2-springboot-check/scripts/prove_redhat_opentelemetry2_springboot_openshift.sh`
+- `redhat-opentelemetry2-springboot-check/scripts/prove_exclude_patterns_difference_openshift.sh`
+
+設定例:
+
+```yaml
+camel:
+  main:
+    run-controller: true
+  opentelemetry2:
+    enabled: true
+    trace-processors: true
+    exclude-patterns: "process*,to*"
+```
+
+### ローカル検証
+
+```bash
+cd redhat-opentelemetry2-springboot-check
+mvn test
+```
+
+確認できた内容:
+
+- trace は 1 本に保たれる
+- `async-custom-span` は残る
+- `processValidate-process` / `processAsync-process` / `toInternal-to` は出ない
+
+### OpenShift 実証
+
+実証スクリプト:
+
+```bash
+cd redhat-opentelemetry2-springboot-check
+./scripts/prove_redhat_opentelemetry2_springboot_openshift.sh
+```
+
+実測結果:
+
+- `async-custom-span count`: `10`
+- `processValidate-process cnt`: `0`
+- `processAsync-process cnt`: `0`
+- `toInternal-to count`: `0`
+
+解釈:
+
+- custom async span は collector まで到達しており、span propagation は維持されている
+- 一方で不要な processor / to span は出力されておらず、出力抑制も成立している
+
+### `exclude-patterns` なしとの比較
+
+さらに、`exclude-patterns` を実質無効化したケースと、`exclude-patterns: "process*,to*"` を有効にしたケースを
+OpenShift 上で比較するスクリプトも追加しました。
+
+```bash
+cd redhat-opentelemetry2-springboot-check
+./scripts/prove_exclude_patterns_difference_openshift.sh
+```
+
+実測結果:
+
+- `no exclude processValidate-process`: `18`
+- `with exclude processValidate-process`: `0`
+- `no exclude processAsync-process`: `18`
+- `with exclude processAsync-process`: `0`
+- `no exclude toInternal-to`: `18`
+- `with exclude toInternal-to`: `0`
+- `no exclude async-custom-span`: `9`
+- `with exclude async-custom-span`: `9`
+
+解釈:
+
+- `exclude-patterns` を指定しない場合は processor/to span が継続的に出力される
+- `exclude-patterns` を指定すると、それらの span は 0 まで抑制される
+- その一方で `async-custom-span` は維持されており、span propagation は失われない
+
+したがって、少なくとも今回の Red Hat ビルド版 `camel-opentelemetry2-starter` の検証範囲では、
+**span の伝播とログメッセージ抑制を同時に実現できる**ことを確認できました。
+
 ## 注意点
 
 - `trace-processors=true` は問題回避に見える場合がありますが、Processor span を大量に増やす副作用があります。

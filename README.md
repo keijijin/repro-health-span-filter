@@ -89,6 +89,16 @@ SKIP_BUILD=true ./scripts/prove_source_exclusion_openshift.sh
 また、最新実装では YAML 配列形式の `exclude-patterns` と、Java Agent 環境でも起動できる
 Camel tracer 初期化順序の調整を反映しています。
 
+`camel-opentelemetry2` については、以下の別プロジェクトで検証しています。
+
+- `community-opentelemetry2-check`
+- `community-opentelemetry2-springboot-check`
+- `redhat-opentelemetry2-springboot-check`
+
+特に `redhat-opentelemetry2-springboot-check` では、Red Hat ビルド版 `camel-opentelemetry2-starter` を用いて、
+span propagation を維持しながら `exclude-patterns` によって processor/to 出力を抑制できることを、
+ローカルテストと OpenShift 実証の両方で確認しています。
+
 Camel 側の別論点として、`excludePatterns` で除外した Processor 内では、既定状態だと OpenTelemetry の `Context.current()` が root になり、別スレッドで起動した custom span が親 trace から分岐することがあります。
 
 今回のサンプルでは次の 2 ケースを `src/test/java/com/example/repro/CamelExcludePatternsPropagationTest.java` で実証しています。

@@ -1,0 +1,25 @@
+Picked up JAVA_TOOL_OPTIONS: -javaagent:/app/opentelemetry-javaagent.jar -Dotel.service.name=redhat-otel2-app -Dotel.traces.exporter=otlp -Dotel.exporter.otlp.endpoint=http://redhat-otel2-collector:4318 -Dotel.exporter.otlp.protocol=http/protobuf -Dotel.metrics.exporter=none -Dotel.logs.exporter=none -Dotel.traces.sampler=always_on
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+[otel.javaagent 2026-03-19 13:47:09:896 +0000] [main] INFO io.opentelemetry.javaagent.tooling.VersionLogger - opentelemetry-javaagent - version: 1.28.0
+OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.11)
+
+2026-03-19T13:47:12.929Z  INFO 2 --- [           main] c.e.r.RedHatSpringBootApplication        : Starting RedHatSpringBootApplication using Java 21.0.10 with PID 2 (/app/app.jar started by 1000790000 in /app)
+2026-03-19T13:47:12.939Z  INFO 2 --- [           main] c.e.r.RedHatSpringBootApplication        : No active profile set, falling back to 1 default profile: "default"
+2026-03-19T13:47:14.960Z  INFO 2 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 4.14.4.redhat-00008 (camel-1) is starting
+2026-03-19T13:47:14.966Z  INFO 2 --- [           main] o.a.c.o.OpenTelemetryTracer              : Opentelemetry2 enabled
+2026-03-19T13:47:14.970Z  INFO 2 --- [           main] c.s.b.CamelSpringBootApplicationListener : Starting CamelMainRunController to ensure the main thread keeps running
+2026-03-19T13:47:14.971Z  INFO 2 --- [inRunController] org.apache.camel.main.MainSupport        : Apache Camel (Main) 4.14.4.redhat-00008 is starting
+2026-03-19T13:47:14.978Z  INFO 2 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Routes startup (total:2)
+2026-03-19T13:47:14.979Z  INFO 2 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started sourceRoute (timer://tick)
+2026-03-19T13:47:14.979Z  INFO 2 --- [           main] o.a.c.impl.engine.AbstractCamelContext   :     Started internalRoute (direct://internal)
+2026-03-19T13:47:14.979Z  INFO 2 --- [           main] o.a.c.impl.engine.AbstractCamelContext   : Apache Camel 4.14.4.redhat-00008 (camel-1) started in 17ms (build:0ms init:0ms start:17ms)
+2026-03-19T13:47:14.981Z  INFO 2 --- [           main] c.e.r.RedHatSpringBootApplication        : Started RedHatSpringBootApplication in 2.684 seconds (process running for 5.351)

@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otel2-collector-config
+data:
+  config.yaml: |
+    receivers:
+      otlp:
+        protocols:
+          grpc:
+            endpoint: 0.0.0.0:4317
+          http:
+            endpoint: 0.0.0.0:4318
+    processors:
+      batch:
+    exporters:
+      debug:
+        verbosity: detailed
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [debug]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel2-collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otel2-collector
+  template:
+    metadata:
+      labels:
+        app: otel2-collector
+    spec:
+      containers:
+      - name: otel2-collector
+        image: otel/opentelemetry-collector-contrib:0.121.0
+        args:
+          - "--config=/etc/otelcol/config.yaml"
+        ports:
+          - containerPort: 4317
+            name: otlp-grpc
+          - containerPort: 4318
+            name: otlp-http
+        volumeMounts:
+          - name: collector-config
+            mountPath: /etc/otelcol
+      volumes:
+      - name: collector-config
+        configMap:
+          name: otel2-collector-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: otel2-collector
+spec:
+  selector:
+    app: otel2-collector
+  ports:
+    - name: otlp-grpc
+      port: 4317
+      targetPort: 4317
+    - name: otlp-http
+      port: 4318
+      targetPort: 4318
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: community-otel2-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: community-otel2-app
+  template:
+    metadata:
+      labels:
+        app: community-otel2-app
+    spec:
+      containers:
+      - name: app
+        image: image-registry.openshift-image-registry.svc:5000/otel-sample/community-otel2-app:latest
+        imagePullPolicy: Always
+        env:
+          - name: JAVA_TOOL_OPTIONS
+            value: >-
+              -javaagent:/app/opentelemetry-javaagent.jar
+              -Dotel.service.name=community-otel2-app
+              -Dotel.traces.exporter=otlp
+              -Dotel.exporter.otlp.endpoint=http://otel2-collector:4318
+              -Dotel.exporter.otlp.protocol=http/protobuf
+              -Dotel.metrics.exporter=none
+              -Dotel.logs.exporter=none
+              -Dotel.traces.sampler=always_on

@@ -1,0 +1,14 @@
+spring:
+  main:
+    web-application-type: none
+
+app:
+  source-uri: "timer:tick?delay=1000&period=500&repeatCount=10"
+
+camel:
+  main:
+    run-controller: true
+  opentelemetry2:
+    enabled: true
+    trace-processors: true
+    exclude-patterns: "process*,to*"
