@@ -70,7 +70,8 @@ final class CamelExcludePatternsScenarioRunner {
 
     try {
       Tracer tracer = sdk.getTracer("repro-test");
-      CamelOpenTelemetrySupport.createTracer(camelContext, tracer, excludePatterns, propagateContext, null);
+      CamelOpenTelemetrySupport.createTracer(tracer, excludePatterns, propagateContext, null)
+          .init(camelContext);
       camelContext.addRoutes(new RouteBuilder() {
         @Override
         public void configure() {

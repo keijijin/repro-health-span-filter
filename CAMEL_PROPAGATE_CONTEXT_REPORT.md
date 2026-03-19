@@ -53,35 +53,43 @@ Runnable task = Context.current().wrap(() -> {
 
 ## 解決実装
 
-解決実装は `src/main/java/com/example/repro/CamelOpenTelemetrySupport.java` に追加しました。
+解決実装は `src/main/java/com/example/repro/CamelOpenTelemetrySupport.java` と
+`src/main/java/com/example/repro/CamelOpenTelemetryConfiguration.java` に追加しました。
 
 実装内容:
 
 - `excludePatterns` を維持する
 - `OpenTelemetryTracingStrategy` を明示生成する
 - `setPropagateContext(true)` を設定する
+- `Tracer` / `ContextPropagators` は optional 扱いにする
+- `CamelContextConfiguration` で Camel 起動直前に tracer を初期化する
 
 実装コード:
 
 ```java
 public static OpenTelemetryTracer createTracer(
-    CamelContext camelContext,
     Tracer tracer,
     String excludePatterns,
-    boolean propagateContext) {
+    boolean propagateContext,
+    ContextPropagators contextPropagators) {
   OpenTelemetryTracer camelTracer = new OpenTelemetryTracer();
-  camelTracer.setTracer(tracer);
+  if (tracer != null) {
+    camelTracer.setTracer(tracer);
+  }
+  if (contextPropagators != null) {
+    camelTracer.setContextPropagators(contextPropagators);
+  }
   camelTracer.setExcludePatterns(excludePatterns);
 
   OpenTelemetryTracingStrategy strategy = new OpenTelemetryTracingStrategy(camelTracer);
   strategy.setPropagateContext(propagateContext);
   camelTracer.setTracingStrategy(strategy);
-  camelTracer.init(camelContext);
   return camelTracer;
 }
 ```
 
 この実装により、除外対象 Processor 自体の span は作らず、Processor 内の current context だけを downstream 処理へ伝搬できます。
+また、Spring Boot / Camel の初期化循環を避けつつ、Java Agent 利用時のように `Tracer` bean が存在しない環境でも起動しやすくしています。
 
 ## 推奨設定
 
@@ -100,6 +108,7 @@ camel:
 `propagate-context` が設定プロパティとして明示公開されていない版があります。
 
 そのため、このサンプルでは YAML だけに依存せず、Java 実装で `setPropagateContext(true)` を明示しています。
+最新実装ではさらに、YAML 配列形式の `exclude-patterns` と、Camel 初期化順序の制御も取り込んでいます。
 
 ## 実証結果
 
@@ -160,10 +169,17 @@ mvn -Dtest=CamelExcludePatternsPropagationTest test
 ./scripts/prove_exclude_patterns_difference.sh
 ```
 
+メッセージ数を増やす場合:
+
+```bash
+MESSAGE_COUNT=100 ./scripts/prove_exclude_patterns_difference.sh
+```
+
 ## 注意点
 
 - `trace-processors=true` は問題回避に見える場合がありますが、Processor span を大量に増やす副作用があります。
-- `exclude-patterns` はまず `"process*,to*"` のような 1 つの文字列で指定する方が安全です。
-- `^(process|to).*` のような正規表現より、Camel のワイルドカード記法を優先する方が無難です。
+- 最新実装では `application.yml` の YAML 配列形式でも `exclude-patterns` を受け取れますが、最終的には Camel へカンマ区切り文字列として渡しています。
+- `^(process|to).*` のような正規表現でも扱えますが、Camel のパターンマッチはワイルドカードも解釈するため、適用範囲は実際の route / processor id に合わせて確認が必要です。
 - `propagate-context` が設定ファイルだけで効くかどうかは、利用している starter 実装に依存します。
+- Java Agent を使う環境では `Tracer` bean が存在しない場合があるため、起動時には tracer 依存を必須にしない実装が安全です。
 - このサンプルの OpenShift / Java Agent 検証は Actuator span 除去の別論点であり、本レポートの Camel `propagateContext` 検証とは切り分けて読む必要があります。

@@ -86,6 +86,8 @@ SKIP_BUILD=true ./scripts/prove_source_exclusion_openshift.sh
 詳細な解説・推奨設定・注意点・実証結果は `CAMEL_PROPAGATE_CONTEXT_REPORT.md` を参照してください。
 `application.yml` の `camel.opentelemetry.exclude-patterns` を有効化するために行った実装は
 `APPLICATION_YML_EXCLUDE_PATTERNS_ENABLEMENT.md` に整理しています。
+また、最新実装では YAML 配列形式の `exclude-patterns` と、Java Agent 環境でも起動できる
+Camel tracer 初期化順序の調整を反映しています。
 
 Camel 側の別論点として、`excludePatterns` で除外した Processor 内では、既定状態だと OpenTelemetry の `Context.current()` が root になり、別スレッドで起動した custom span が親 trace から分岐することがあります。
 

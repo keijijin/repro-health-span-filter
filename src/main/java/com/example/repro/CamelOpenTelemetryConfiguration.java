@@ -2,8 +2,9 @@ package com.example.repro;
 
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.propagation.ContextPropagators;
-import org.apache.camel.CamelContext;
 import org.apache.camel.opentelemetry.OpenTelemetryTracer;
+import org.apache.camel.spring.boot.CamelContextConfiguration;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -18,15 +19,28 @@ public class CamelOpenTelemetryConfiguration {
   @Bean(initMethod = "", destroyMethod = "")
   @ConditionalOnMissingBean(OpenTelemetryTracer.class)
   OpenTelemetryTracer openTelemetryTracer(
-      CamelContext camelContext,
       CamelOpenTelemetryProperties properties,
-      Tracer tracer,
-      ContextPropagators contextPropagators) {
+      ObjectProvider<Tracer> tracerProvider,
+      ObjectProvider<ContextPropagators> contextPropagatorsProvider) {
     return CamelOpenTelemetrySupport.createTracer(
-        camelContext,
-        tracer,
+        tracerProvider.getIfAvailable(),
         properties.getExcludePatternsAsString(),
         properties.isPropagateContext(),
-        contextPropagators);
+        contextPropagatorsProvider.getIfAvailable());
+  }
+
+  @Bean
+  CamelContextConfiguration camelOpenTelemetryInitializer(OpenTelemetryTracer openTelemetryTracer) {
+    return new CamelContextConfiguration() {
+      @Override
+      public void beforeApplicationStart(org.apache.camel.CamelContext camelContext) {
+        openTelemetryTracer.init(camelContext);
+      }
+
+      @Override
+      public void afterApplicationStart(org.apache.camel.CamelContext camelContext) {
+        // noop
+      }
+    };
   }
 }
